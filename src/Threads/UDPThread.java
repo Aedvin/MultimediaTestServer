@@ -14,10 +14,11 @@ import java.net.SocketTimeoutException;
 
 public class UDPThread extends Thread {
 
+    private volatile boolean mRunning;
+
     private final static int PORT = 49558;
     private final static int MAX_PACKET_SIZE = 1024;
 
-    private boolean mRunning;
     private DatagramSocket mSocket;
 
     public UDPThread() {
